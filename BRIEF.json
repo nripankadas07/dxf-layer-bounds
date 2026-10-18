@@ -1,0 +1,29 @@
+{
+  "repo": "dxf-layer-bounds",
+  "module": "dxf_layer_bounds",
+  "units": 17,
+  "capability": "Report per-layer two-dimensional LINE/CIRCLE/ARC bounds with explicit geometric evidence.",
+  "user": "CAD export maintainers checking a small planar model-space DXF.",
+  "pain": "A whole-drawing bounding box does not explain which layer/entity caused an extent, especially on an arc crossing zero degrees.",
+  "comparables": [
+    "LibreCAD/LibreCAD",
+    "mozman/ezdxf",
+    "LibreCAD/libdxfrw"
+  ],
+  "leader": "LibreCAD/LibreCAD",
+  "query": "DXF",
+  "quick": "dxf-layer-bounds example.dxf",
+  "expected": "Exit 0: cut layer bounds are [-2,0,3,4]; reference circle bounds are [9,9,11,11]. Three entities on two layers.",
+  "contract": "ASCII DXF with one ENTITIES section and complete section/EOF structure. Only LINE,CIRCLE,ARC in model space with zero Z/thickness and default extrusion. Arc sweeps are counterclockwise, normalized modulo360 and include endpoints plus cardinal extrema. Full/zero-turn arcs are rejected: use CIRCLE. All entities, including invisible ones, contribute raw geometry. Per-layer counts, bounds and approximate total lengths retain entity evidence; zero-length LINE is an exit1 finding.",
+  "limits": "2 MiB,50000 code/value pairs,10000 entities,256 layers,128-character layer names,1024-character tag values; finite coordinate/angle absolute magnitude<=1e9. Other sections are counted and ignored. Unsupported entities, transforms, duplicate geometry fields, layouts and missing coordinates fail explicitly. No blocks, polylines, text, clipping, units conversion, repair or manufacturing certificate. Bounds/lengths use floating point.",
+  "acceptance": "Correct line/circle/cardinal arc extents,350-to10-degree sweep and layer unions; reject3D, nondefault extrusion, inserts, malformed sections and duplicate geometry tags.",
+  "notes": "LibreCAD is a complete CAD application. Ezdxf already computes bounding boxes across far broader entity types, including transforms and curves. Libdxfrw provides broad DXF/DWG IO. This smaller strict report is a narrower interface, not an absent competitor feature.",
+  "overlap": "The owned OBJ island audit analyzes triangle edge topology in3D. This tool analyzes different file semantics, layer identities and planar primitive bounds; no shared product was subdivided.",
+  "topics": [
+    "dxf",
+    "cad",
+    "geometry",
+    "python",
+    "data-validation"
+  ]
+}

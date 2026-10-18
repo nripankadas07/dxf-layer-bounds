@@ -1,0 +1,82 @@
+{
+  "repo": "dxf-layer-bounds",
+  "state": "VALIDATED",
+  "observed": "2026-10-18T06:35:18.615298+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "linux",
+  "unit_methods": 17,
+  "runtime_dependencies": [],
+  "checks": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-q",
+        "test_behavior"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 17 tests in 0.018s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--wheel-dir",
+        "/tmp/gh18-b7f9n149/.wheels",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct18/dxf-layer-bounds"
+      ],
+      "exit": 0,
+      "stdout": "Processing ./.\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: dxf-layer-bounds\n  Building wheel for dxf-layer-bounds (pyproject.toml): started\n  Building wheel for dxf-layer-bounds (pyproject.toml): finished with status 'done'\n  Created wheel for dxf-layer-bounds: filename=dxf_layer_bounds-0.1.0-py3-none-any.whl size=5040 sha256=2dc5ec4dfcb420311fe418cb1bd56f3493012885791274280c25b611fd4d2ea2\n  Stored in directory: /tmp/pip-ephem-wheel-cache-c1mcepw5/wheels/07/75/95/68f9868a7ae4c75a29c4779397ed8b40858ac10cd32066ede3\nSuccessfully built dxf-layer-bounds\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/gh18-b7f9n149/env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/gh18-b7f9n149/.wheels/dxf_layer_bounds-0.1.0-py3-none-any.whl"
+      ],
+      "exit": 0,
+      "stdout": "Processing /tmp/gh18-b7f9n149/.wheels/dxf_layer_bounds-0.1.0-py3-none-any.whl\nInstalling collected packages: dxf-layer-bounds\nSuccessfully installed dxf-layer-bounds-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/5d784ffbbfd3/prepared-oct18/dxf-layer-bounds/verify_installed.py",
+        "/tmp/gh18-b7f9n149/env/bin/python"
+      ],
+      "exit": 0,
+      "stdout": "{\"installed_console\": \"dxf-layer-bounds\", \"cases\": 2, \"malformed_exit\": 2, \"source_bytes_preserved\": true, \"cwd_outside_checkout\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "installed": {
+    "installed_console": "dxf-layer-bounds",
+    "cases": 2,
+    "malformed_exit": 2,
+    "source_bytes_preserved": true,
+    "cwd_outside_checkout": true
+  },
+  "remote_ci": "NOT_YET_PUBLISHED"
+}

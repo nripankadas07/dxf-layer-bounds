@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dxf-layer-bounds"
+version = "0.1.0"
+description = "Report per-layer two-dimensional LINE/CIRCLE/ARC bounds with explicit geometric evidence."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+[project.scripts]
+dxf-layer-bounds = "dxf_layer_bounds:main"
+[tool.setuptools]
+py-modules = ["dxf_layer_bounds"]
